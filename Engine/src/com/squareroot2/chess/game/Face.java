@@ -171,12 +171,14 @@ public class Face {
                     Location key;
                     if (piece.name() == Name.Minister) Mapping = MinisterEyeMapping;
                     else if (piece.name() == Name.Horse) Mapping = HorseLegMapping;
-                    for (int[][] map : Mapping) {
-                        key = location.add(map[0]);
-                        if (key.isInBoard() && get(key) == null) {
-                            temp = location.add(map[1]);
-                            if (temp.isInArea(piece.color()) && get(temp) != null && get(temp).color() != piece.color())
-                                locations.add(temp);
+                    if (Mapping != null) {
+                        for (int[][] map : Mapping) {
+                            key = location.add(map[0]);
+                            if (key.isInBoard() && get(key) == null) {
+                                temp = location.add(map[1]);
+                                if (temp.isInArea(piece.color()) && get(temp) != null && get(temp).color() != piece.color())
+                                    locations.add(temp);
+                            }
                         }
                     }
                 }
