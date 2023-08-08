@@ -1,4 +1,4 @@
-package com.squareroot2.chess.game;
+package com.squareroot2.chess.parts;
 
 import com.squareroot2.chess.attributes.Color;
 import com.squareroot2.chess.attributes.Name;
